@@ -13,6 +13,10 @@ public class Contact {
         this.messages = messages;
     }
 
+    public Contact() {
+
+    }
+
     public int getIdSender() {
         return idSender;
     }
