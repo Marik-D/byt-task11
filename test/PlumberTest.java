@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +30,10 @@ public class PlumberTest {
 
     @Test
     public void testGettingAllPlumbers(){
-        assertEquals(new ArrayList<Plumber>(),Plumber.getAllPlumbers());
+        List<Plumber> l = new ArrayList<>() { {
+           add(plumber1);
+        }};
+        assertEquals(l,Plumber.getAllPlumbers());
     }
 
     @Test

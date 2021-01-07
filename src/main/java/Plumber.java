@@ -10,10 +10,12 @@ public class Plumber {
     public Plumber(Long plumberId, String qualifications) {
         this.plumberId = plumberId;
         this.qualifications = qualifications;
+        plumbers.add(this);
     }
 
     public Plumber(Long plumberId) {
         this.plumberId = plumberId;
+        plumbers.add(this);
     }
 
     public Long getPlumberId() {
