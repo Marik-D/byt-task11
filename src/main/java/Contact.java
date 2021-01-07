@@ -7,10 +7,10 @@ public class Contact {
     private int idReceiver;
     private ArrayList<String> messages;
 
-    public Contact(int idSender, int idReceiver, ArrayList<String> messages) {
+    public Contact(int idSender, int idReceiver) {
         this.idSender = idSender;
         this.idReceiver = idReceiver;
-        this.messages = messages;
+        this.messages = new ArrayList<String>();
     }
 
     public Contact() {
@@ -47,5 +47,14 @@ public class Contact {
 
     public List<String> readOld(Date date) {
         return messages;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "idSender=" + idSender +
+                ", idReceiver=" + idReceiver +
+                ", messages=" + messages +
+                '}';
     }
 }

@@ -17,6 +17,9 @@ public class Employee {
         this.email = email;
     }
 
+    public Employee() {
+    }
+
     public int getIdEmployee() {return idEmployee; }
 
     public void setIdEmployee(int idEmployee) {
@@ -71,5 +74,8 @@ public class Employee {
         this.email = email;
     }
 
+    public Contact contact(int idReceiver){
+        return new Contact(idReceiver, idEmployee);
+    }
 
 }

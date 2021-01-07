@@ -1,3 +1,4 @@
 // TODO: Extend employee
-public class Manager {
+public class Manager extends Employee {
+
 }
