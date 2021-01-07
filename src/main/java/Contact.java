@@ -7,6 +7,12 @@ public class Contact {
     private int idReceiver;
     private ArrayList<String> messages;
 
+    public Contact(int idSender, int idReceiver, ArrayList<String> messages) {
+        this.idSender = idSender;
+        this.idReceiver = idReceiver;
+        this.messages = messages;
+    }
+
     public int getIdSender() {
         return idSender;
     }
