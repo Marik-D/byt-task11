@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Employee {
-    private int idEmployee;
+    private Long idEmployee;
     private String firstName;
     private String lastName;
     private int phoneNumber;
@@ -9,7 +9,7 @@ public class Employee {
     private String password;
     private String email;
 
-    public Employee(int idEmployee, String firstName, String lastName, int phoneNumber, String username, String password, String email) {
+    public Employee( Long idEmployee, String firstName, String lastName, int phoneNumber, String username, String password, String email) {
         this.idEmployee = idEmployee;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,9 +22,11 @@ public class Employee {
     public Employee() {
     }
 
-    public int getIdEmployee() {return idEmployee; }
+    public Long getIdEmployee() {
+        return idEmployee;
+    }
 
-    public void setIdEmployee(int idEmployee) {
+    public void setIdEmployee(Long idEmployee) {
         this.idEmployee = idEmployee;
     }
 
@@ -76,8 +78,8 @@ public class Employee {
         this.email = email;
     }
 
-    public Contact contact(int idReceiver){
-        return new Contact(idReceiver, idEmployee);
+    public Contact contact(int idReceiver) {
+        return new Contact(idReceiver, Math.toIntExact(idEmployee));
     }
 
 

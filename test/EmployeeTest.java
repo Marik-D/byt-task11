@@ -9,18 +9,18 @@ public class EmployeeTest {
     private Employee emp;
     @Before
     public void setUp() throws Exception {
-        emp = new Employee(1,"Jan","Kowalski",123123123,"jkowalski","stupidPassword", "jkow@plumbing.com");
+        emp = new Employee(1L,"Jan","Kowalski",123123123,"jkowalski","stupidPassword", "jkow@plumbing.com");
     }
 
     @Test
     public void getIdEmployee() {
-        assertEquals(1, emp.getIdEmployee());
+        assertEquals(Long.valueOf(1), emp.getIdEmployee());
     }
 
     @Test
     public void setIdEmployee() {
-        emp.setIdEmployee(2);
-        assertEquals(2, emp.getIdEmployee());
+        emp.setIdEmployee(2L);
+        assertEquals(Long.valueOf(2), emp.getIdEmployee());
     }
 
     @Test
@@ -91,7 +91,7 @@ public class EmployeeTest {
 
     @Test
     public void contact() {
-        Contact contactTest = new Contact(5, emp.getIdEmployee());
+        Contact contactTest = new Contact(5, Math.toIntExact(emp.getIdEmployee()));
         assertEquals(contactTest.toString(), emp.contact(5).toString());
     }
 }

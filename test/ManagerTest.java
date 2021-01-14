@@ -13,13 +13,13 @@ public class ManagerTest {
 
     @Test
     public void getIdEmployee() {
-        assertEquals(1, manager.getIdEmployee());
+        assertEquals(Long.valueOf(1), manager.getIdEmployee());
     }
 
     @Test
     public void setIdEmployee() {
-        manager.setIdEmployee(2);
-        assertEquals(2, manager.getIdEmployee());
+        manager.setIdEmployee(Long.valueOf(2));
+        assertEquals(Long.valueOf(2), manager.getIdEmployee());
     }
 
     @Test
@@ -90,7 +90,7 @@ public class ManagerTest {
 
     @Test
     public void contact() {
-        Contact contactTest = new Contact(5, manager.getIdEmployee());
+        Contact contactTest = new Contact(5, Math.toIntExact(manager.getIdEmployee()));
         assertEquals(contactTest.toString(), manager.contact(5).toString());
     }
 }
