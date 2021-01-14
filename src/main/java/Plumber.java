@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class Plumber {
+public class Plumber extends Employee{
     private final Long plumberId;
     private String qualifications;
 
