@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
     private int idEmployee;
     private String firstName;
@@ -78,4 +80,36 @@ public class Employee {
         return new Contact(idReceiver, idEmployee);
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return idEmployee == employee.idEmployee &&
+                phoneNumber == employee.phoneNumber &&
+                Objects.equals(firstName, employee.firstName) &&
+                Objects.equals(lastName, employee.lastName) &&
+                Objects.equals(username, employee.username) &&
+                Objects.equals(password, employee.password) &&
+                Objects.equals(email, employee.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idEmployee, firstName, lastName, phoneNumber, username, password, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "idEmployee=" + idEmployee +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

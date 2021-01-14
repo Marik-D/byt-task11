@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ToolAssignment {
     private final Long toolAssignmentId;
     private Plumber plumber;
@@ -31,5 +33,29 @@ public class ToolAssignment {
 
     public void setTool(Tool tool) {
         this.tool = tool;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ToolAssignment that = (ToolAssignment) o;
+        return Objects.equals(toolAssignmentId, that.toolAssignmentId) &&
+                Objects.equals(plumber, that.plumber) &&
+                Objects.equals(tool, that.tool);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(toolAssignmentId, plumber, tool);
+    }
+
+    @Override
+    public String toString() {
+        return "ToolAssignment{" +
+                "toolAssignmentId=" + toolAssignmentId +
+                ", plumber=" + plumber +
+                ", tool=" + tool +
+                '}';
     }
 }
