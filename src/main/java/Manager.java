@@ -19,8 +19,8 @@ public class Manager extends Employee {
     }
 
 
-    public void assignTool(Tool tool, Plumber plumber, Period period){
-
+    public void assignTool(Tool tool, Plumber plumber, long id){
+        new ToolAssignment(id, plumber, tool);
     }
 
 
